@@ -1,20 +1,20 @@
 import generateRows from '../src/formatters/rows/generateRows';
-import zipcelx, { generateXMLWorksheet } from '../src/zipcelx';
+import xljsxLite, { generateXMLWorksheet } from '../src/xljsx-lite';
 import baseConfig from './baseConfig';
 
-console.error = jest.genMockFn();
+console.error = jest.fn();
 
-describe('Zipcelx', () => {
+describe('xljsxLite', () => {
   const rowsXML = `<row r="1"><c r="A1" t="inlineStr"><is><t>Test</t></is></c><c r="B1"><v>1000</v></c></row>`;
 
   it('Should throw error if validator fails', () => {
     let config = Object.assign({}, baseConfig, { sheets: [{ data: [{test: 'demo'}] }] });
-    expect(() => zipcelx(config)).toThrow();
+    expect(() => xljsxLite(config)).toThrow();
   });
 
   it('Should throw error if multi sheet validator fails', () => {
     let badConfig = Object.assign({}, baseConfig, { sheets: [{ data: [{ test: 'demo' }] }] });
-    expect(() => zipcelx(badConfig)).toThrow();
+    expect(() => xljsxLite(badConfig)).toThrow();
   });
 
   it('Should map row arrays to XML markup', () => {

@@ -23,7 +23,7 @@ const baseConfigDescription = expect.objectContaining({
   ])
 });
 
-console.error = jest.genMockFn();
+console.error = jest.fn();
 
 describe('Validator', () => {
   it('Should ensure being called with correct base config succeeds', () => {

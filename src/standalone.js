@@ -1,3 +1,3 @@
-import zipcelx from './zipcelx';
+import xljsxLite from './xljsx-lite';
 
-global.zipcelx = zipcelx;
+global.xljsxLite = xljsxLite;

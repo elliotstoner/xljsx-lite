@@ -1,8 +1,8 @@
-import commonjs from 'rollup-plugin-commonjs';
+import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
 import builtins from 'rollup-plugin-node-builtins';
 import globals from 'rollup-plugin-node-globals';
-import resolve from 'rollup-plugin-node-resolve';
-import uglify from 'rollup-plugin-uglify';
+import { terser } from 'rollup-plugin-terser';
 import pkg from './package.json';
 
 export default [
@@ -13,6 +13,7 @@ export default [
       name: 'howLongUntilLunch',
       file: pkg['standalone-build'],
       format: 'umd',
+      exports: 'named',
     },
     plugins: [
       resolve({
@@ -27,7 +28,7 @@ export default [
       }),
       globals(),
       builtins(),
-      uglify(),
+      terser(),
     ],
   },
 
@@ -38,20 +39,28 @@ export default [
   // an array for the `output` option, where we can specify
   // `file` and `format` for each target)
   {
-    input: 'src/zipcelx.js',
+    input: 'src/xljsx-lite.js',
     external: Object.keys(pkg.dependencies),
     output: [
-      { file: pkg.main, format: 'cjs' },
+      {
+        file: pkg.main,
+        format: 'cjs',
+        exports: 'named',
+      },
     ],
     plugins: [
-      uglify(),
+      terser(),
     ],
   },
   {
-    input: 'src/zipcelx.js',
+    input: 'src/xljsx-lite.js',
     external: Object.keys(pkg.dependencies),
     output: [
-      { file: pkg.module, format: 'es' },
+      {
+        file: pkg.module,
+        format: 'es',
+        exports: 'named',
+      },
     ],
   },
 ];

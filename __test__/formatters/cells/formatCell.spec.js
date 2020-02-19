@@ -4,7 +4,7 @@ import baseConfig from '../../baseConfig';
 
 const cells = baseConfig.sheets[0].data[0];
 
-console.warn = jest.genMockFn();
+console.warn = jest.fn();
 
 describe('Format Cell', () => {
   describe('Create a cell of type sting', () => {
