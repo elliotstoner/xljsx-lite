@@ -37,7 +37,7 @@ const generateWorkbook = config => {
   return zip;
 };
 
-export default config => {
+export function xljsxLite(config) {
   if (!validator(config)) {
     throw new Error('Validation failed.');
   }
@@ -45,9 +45,10 @@ export default config => {
   const zip = generateWorkbook(config);
 
   return zip.generateAsync({
-    type: 'blob',
+    type: JSZip.support.blob ? 'blob' : 'nodebuffer',
     mimeType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
   }).then(blob => {
+    // TODO make this work for nodebuffer, see last example at https://stuk.github.io/jszip/documentation/api_jszip/generate_async.html
     FileSaver.saveAs(blob, `${config.filename}.xlsx`);
   });
-};
+}

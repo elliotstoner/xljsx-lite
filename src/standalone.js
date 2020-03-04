@@ -1,3 +1,3 @@
-import xljsxLite from './xljsx-lite';
+import { xljsxLite } from './xljsx-lite';
 
 global.xljsxLite = xljsxLite;
