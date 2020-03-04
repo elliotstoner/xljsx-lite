@@ -12,11 +12,6 @@ describe('xljsxLite', () => {
     expect(() => xljsxLite(config)).toThrow();
   });
 
-  it('Should throw error if multi sheet validator fails', () => {
-    let badConfig = Object.assign({}, baseConfig, { sheets: [{ data: [{ test: 'demo' }] }] });
-    expect(() => xljsxLite(badConfig)).toThrow();
-  });
-
   it('Should map row arrays to XML markup', () => {
     expect(generateRows(baseConfig.sheets[0].data)).toBe(rowsXML);
   });

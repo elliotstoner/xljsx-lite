@@ -13,10 +13,7 @@ const baseConfigDescription = expect.objectContaining({
       sheetName: expect.any(String),
       data: expect.arrayContaining([
         expect.arrayContaining([
-          expect.objectContaining({
-            value: expect.anything(),
-            type: expect.anything()
-          })
+          expect.any(String, Number)
         ])
       ])
     })

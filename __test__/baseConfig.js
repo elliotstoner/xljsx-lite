@@ -8,24 +8,12 @@ export default {
     {
       sheetName: 'testSheet',
       data: [
-        [{
-          value: 'Test',
-          type: 'string',
-        }, {
-          value: 1000,
-          type: 'number',
-        }],
+        ['Test', 1000],
       ],
     },
     {
       data: [
-        [{
-          value: 'Test 2',
-          type: 'string',
-        }, {
-          value: 2000,
-          type: 'number',
-        }],
+        ['Test 2',2000],
       ],
     },
   ],
