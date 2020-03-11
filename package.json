@@ -1,6 +1,6 @@
 {
   "name": "xljsx-lite",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Build .xlsx files in Javascript",
   "main": "lib/legacy.js",
   "module": "lib/module.js",

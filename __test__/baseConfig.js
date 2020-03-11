@@ -13,7 +13,7 @@ export default {
     },
     {
       data: [
-        ['Test 2',2000],
+        ['Test 2', 2000],
       ],
     },
   ],
