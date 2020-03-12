@@ -52,7 +52,7 @@ const config = {
 await xljsxLite(config)
 ```
 
-For more examples, check out the [example repo](https://github.com/elliotstoner/xljsx-lite-examples/)
+For more examples, check out the [example repo.](https://github.com/elliotstoner/xljsx-lite-examples/)
 
 
 ## Issues
