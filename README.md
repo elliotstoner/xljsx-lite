@@ -41,7 +41,7 @@ const config = {
     {
       sheetname: 'sheet1',
       data: [
-        ['Test', 'Data', 'Row 2'], // Each array in 'data' represents a row
+        ['Test', 'Data', 'Row 1'], // Each array in 'data' represents a row
         ['More', 'Data', 'Row 2'],
       ]
     }
