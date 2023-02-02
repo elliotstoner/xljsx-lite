@@ -2896,8 +2896,8 @@ json5@^2.1.0:
     minimist "^1.2.0"
 
 jszip@^3.2.2:
-  version "3.7.0"
-  resolved "https://registry.npmjs.org/jszip/-/jszip-3.7.0.tgz"
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/jszip/-/jszip-3.8.0.tgz#a2ac3c33fe96a76489765168213655850254d51b"
   dependencies:
     lie "~3.3.0"
     pako "~1.0.2"
